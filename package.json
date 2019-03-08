@@ -1,0 +1,48 @@
+{
+  "name": "vscode-vision",
+  "version": "1.0.0",
+  "description": "VS Code extension to save your eyes",
+  "main": "./pkg/dist-node/index.js",
+  "repository": "https://github.com/lukehedger/vscode-vision.git",
+  "author": "Luke Hedger <https://level-out.com/>",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.33.0-insider"
+  },
+  "scripts": {
+    "build": "pack build"
+  },
+  "dependencies": {
+    "vscode": "1.1.30"
+  },
+  "devDependencies": {
+    "@pika/pack": "0.3.4",
+    "@pika/plugin-build-node": "0.3.14",
+    "@pika/plugin-standard-pkg": "0.3.14"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ]
+    ]
+  },
+  "activationEvents": [
+    "onCommand:extension.vision"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.vision",
+        "title": "Vision"
+      }
+    ]
+  },
+  "publisher": "lukehedger"
+}
